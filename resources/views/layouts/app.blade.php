@@ -12,8 +12,14 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
     <!-- Scripts -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -43,7 +49,8 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="{{route('users.index')}}">用户管理</a></li>
+                        {{--<li><a href="{{route('corporation.index')}}">单位管理</a></li>--}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -80,8 +87,6 @@
 
         @yield('content')
     </div>
-
-    <!-- Scripts -->
     <script src="/js/app.js"></script>
 </body>
 </html>
