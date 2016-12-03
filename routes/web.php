@@ -58,3 +58,24 @@ Route::group([
     ], function(){
     Route::resource('users', 'UserController');
 });
+
+/*
+|--------------------------------------------------------------------------
+| 项目申报
+|--------------------------------------------------------------------------
+|
+| Url为:/project
+|
+*/
+Route::group([
+    'prefix'=> 'project',
+    'middleware'=>'role:xmfzr'
+], function(){
+    Route::get('/', 'ProjectController@index')->name('projects.index');
+    Route::post('/', 'ProjectController@store')->name('projects.store');
+    Route::get('/create', 'ProjectController@create')->name('projects.create');
+    Route::get('/{project}/edit/{step?}', 'ProjectController@edit')->name('projects.edit');
+    Route::put('/{project}/edit/{step?}', 'ProjectController@update')->name('projects.update');
+    Route::get('/{project}/{step?}', 'ProjectController@show')->name('projects.show');
+    Route::delete('/{project}', 'ProjectController@destroy')->name('projects.destroy');
+});

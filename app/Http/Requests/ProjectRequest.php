@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends FormRequest
+class ProjectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,7 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255',
-            'username' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-            'role_id' => 'required',
+            'xmmc' => 'required|max:255|unique:projects,xmmc,'.$this->route('project'),
         ];
     }
 }

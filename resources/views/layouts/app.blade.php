@@ -49,7 +49,14 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+{{--                        <li><a href="{{route('profile.edit')}}">修改个人信息</a></li>--}}
+                        {{--<li><a href="{{route('users.edit')}}">浏览通知</a></li>--}}
+                        @role('xmfzr')
+                        <li><a href="{{route('projects.index')}}">申报项目</a></li>
+                        @endrole
+                        @role('admin')
                         <li><a href="{{route('users.index')}}">用户管理</a></li>
+                        @endrole
                         {{--<li><a href="{{route('corporation.index')}}">单位管理</a></li>--}}
                     </ul>
 

@@ -26,7 +26,7 @@
                     </tr>
                     <tr>
                         <td class="table-label">登录用户名:</td>
-                        <td>{!! Form::text('username', old('email'), ['class'=>'form-control']) !!}</td>
+                        <td>{!! Form::text('username', old('username'), ['class'=>'form-control']) !!}</td>
                     </tr>
                     <tr>
                         <td class="table-label">登录密码:</td>

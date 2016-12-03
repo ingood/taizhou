@@ -1,6 +1,9 @@
-.main-content {
+.main-content,  .sidebar {
   background:#fff;
   padding:10px 15px 30px;
+}
+.sidebar {
+  background:#d3e0e9;
 }
 .box-header, .box-footer {
   overflow:hidden;
@@ -23,9 +26,25 @@
 .table-label {
   vertical-align: middle !important;
   text-align:right;
-  width:150px;
+  width:180px;
   background:#f5f5f5;
 }
 #delete-form {
   display:none;
+}
+.input-col {
+  padding:0 !important;
+}
+.input-col-info {
+  line-height:36px !important;
+}
+.no-padding {
+  padding:0 !important;
+}
+.no-margin {
+  margin:0 !important;
+}
+.input-divider {
+  clear:both;
+  height:5px;
 }
