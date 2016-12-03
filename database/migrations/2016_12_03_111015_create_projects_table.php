@@ -39,6 +39,10 @@ class CreateProjectsTable extends Migration
             $table->text('zhbj')->nullable()->comment('综合比较');
             $table->text('yyqk')->nullable()->comment('应用情况');
             $table->text('xjjwt')->nullable()->comment('需解决问题');
+            $table->string('xmztze')->nullable()->comment('项目总投资额');
+            $table->string('hsq')->nullable()->comment('回收期');
+            $table->text('jjxyjsyj')->nullable()->comment('经济效益计算依据');
+            $table->text('shxy')->nullable()->comment('社会效益');
             $table->text('sbyj')->nullable()->comment('申报意见');
             $table->string('status')->default('编辑中')->comment('项目状态');
             $table->timestamps();

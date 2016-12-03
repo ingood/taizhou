@@ -6,20 +6,23 @@ use App\Http\Requests\ProjectRequest;
 use Illuminate\Http\Request;
 use App\Repositories\ProjectsRepository as Project;
 use App\Repositories\OptionsRepository as Option;
+use App\Repositories\StepsRepository as Step;
 class ProjectController extends Controller
 {
     private $project;
     private $option;
+    private $step;
 
     /**
      * ProjectController constructor.
      * @param $project
      * @param $option
      */
-    public function __construct(Project $project, Option $option)
+    public function __construct(Project $project, Option $option, Step $step)
     {
         $this->project = $project;
         $this->option = $option;
+        $this->step = $step;
     }
 
     public function index()
@@ -36,8 +39,8 @@ class ProjectController extends Controller
 
     public function store(ProjectRequest $request)
     {
-        $this->project->createRich($request->all());
-        return redirect(route('projects.index'));
+        $project = $this->project->createRich($request->all());
+        return redirect(route('projects.steps.edit', ['project' => $project->id, 'step'=>2]));
     }
 
     public function show($id)
@@ -57,12 +60,28 @@ class ProjectController extends Controller
     public function update(ProjectRequest $request, $id)
     {
         $this->project->updateRich($request->all(), $id);
-        return redirect(route('projects.show', $id));
+        return redirect(route('projects.steps.edit', ['project' => $id, 'step'=>2]));
+//        return redirect(route('projects.show', $id));
     }
 
     public function destroy($id)
     {
         $this->project->delete($id);
         return redirect(route('projects.index'));
+    }
+
+    public function stepEdit($id, $stepId)
+    {
+        $project = $this->project->find($id);
+        $step = $this->step->find($stepId);
+        return view('projects.steps.'.$step->name)->with(compact('project','step'));
+    }
+
+    public function stepUpdate(Request $request, $id, $stepId)
+    {
+        $project = $this->project->find($id);
+        $this->project->updateRich($request->all(),$project->id);
+        $next = $this->step->getNextRoute($project->id, $stepId);
+        return redirect($next);
     }
 }

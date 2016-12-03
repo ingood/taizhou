@@ -10768,6 +10768,10 @@ button.close {
   background: #f5f5f5;
 }
 
+.table-label.text-left {
+  text-align: left;
+}
+
 #delete-form {
   display: none;
 }

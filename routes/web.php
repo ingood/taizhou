@@ -78,4 +78,9 @@ Route::group([
     Route::put('/{project}/edit/{step?}', 'ProjectController@update')->name('projects.update');
     Route::get('/{project}/{step?}', 'ProjectController@show')->name('projects.show');
     Route::delete('/{project}', 'ProjectController@destroy')->name('projects.destroy');
+    Route::put('/{project}/step/{step}', 'ProjectController@stepUpdate')->name('projects.steps.update');
+    Route::get('/{project}/step/{step}/edit', 'ProjectController@stepEdit')->name('projects.steps.edit');
+});
+Route::group(['prefix'=> 'project',], function(){
+    Route::get('/{project}/step/{step}', 'ProjectController@stepShow')->name('projects.steps.show');
 });
