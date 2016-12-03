@@ -10,17 +10,23 @@ class Project extends Model
         'id',
     ];
 
-    public function setYjqssjAttribute($datetime)
+    public function setYjqssjAttribute($date)
     {
-        if(empty($datetime)) {
+        var_dump($date);
+        if(empty($date)) {
             $this->attributes['yjqssj'] = null;
+        } else {
+            $this->attributes['yjqssj'] = $date;
         }
     }
 
-    public function setYjwcsjAttribute($datetime)
+    public function setYjwcsjAttribute($date)
     {
-        if(empty($datetime)) {
+        var_dump($date);
+        if(empty($date)) {
             $this->attributes['yjwcsj'] = null;
+        } else {
+            $this->attributes['yjwcsj'] = $date;
         }
     }
 

@@ -22,11 +22,11 @@ class CreateProjectsTable extends Migration
             $table->string('cgdjhm')->nullable()->comment('成果登记号码');
             $table->string('tjjllb')->nullable()->comment('推荐奖励类别');
             $table->boolean('xmmckfgb')->nullable()->comment('项目名称可否公布');
-            $table->string('rwly')->nullbale()->comment('任务来源');
-            $table->string('ssgmjjhy')->nullbale()->comment('所属国民经济行业');
+            $table->string('rwly')->nullable()->comment('任务来源');
+            $table->string('ssgmjjhy')->nullable()->comment('所属国民经济行业');
             $table->string('jhmchbh')->nullable()->comment('计划(基金)名称和编号');
-            $table->dateTime('yjqssj')->nullable()->comment('研究起始时间');
-            $table->dateTime('yjwcsj')->nullable()->comment('研究完成时间');
+            $table->date('yjqssj')->nullable()->comment('研究起始时间');
+            $table->date('yjwcsj')->nullable()->comment('研究完成时间');
             $table->string('tjdw')->nullable()->comment('推荐单位');
             $table->string('xkfldm')->nullable()->comment('学科分类代码');
             $table->string('xkflmc')->nullable()->comment('学科分类名称');

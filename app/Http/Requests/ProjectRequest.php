@@ -25,6 +25,8 @@ class ProjectRequest extends FormRequest
     {
         return [
             'xmmc' => 'required|max:255|unique:projects,xmmc,'.$this->route('project'),
+            'yjqssj' => 'date',
+            'yjwcsj' => 'date',
         ];
     }
 }
