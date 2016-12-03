@@ -12,7 +12,6 @@ class Project extends Model
 
     public function setYjqssjAttribute($date)
     {
-        var_dump($date);
         if(empty($date)) {
             $this->attributes['yjqssj'] = null;
         } else {
@@ -22,7 +21,6 @@ class Project extends Model
 
     public function setYjwcsjAttribute($date)
     {
-        var_dump($date);
         if(empty($date)) {
             $this->attributes['yjwcsj'] = null;
         } else {

@@ -37,7 +37,7 @@ class ProjectController extends Controller
     public function store(ProjectRequest $request)
     {
         $this->project->createRich($request->all());
-//        return redirect(route('projects.index'));
+        return redirect(route('projects.index'));
     }
 
     public function show($id)
