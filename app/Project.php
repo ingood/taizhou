@@ -10,22 +10,19 @@ class Project extends Model
         'id',
     ];
 
+    public function awards()
+    {
+        return $this->hasMany('App\Award');
+    }
+
     public function setYjqssjAttribute($date)
     {
-        if(empty($date)) {
-            $this->attributes['yjqssj'] = null;
-        } else {
-            $this->attributes['yjqssj'] = $date;
-        }
+        $this->attributes['yjqssj'] = empty($date) ? null : $date;
     }
 
     public function setYjwcsjAttribute($date)
     {
-        if(empty($date)) {
-            $this->attributes['yjwcsj'] = null;
-        } else {
-            $this->attributes['yjwcsj'] = $date;
-        }
+        $this->attributes['yjwcsj'] = empty($date) ? null : $date;
     }
 
     public function setRwlyAttribute($data)

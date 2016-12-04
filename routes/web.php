@@ -76,6 +76,7 @@ Route::group([
     Route::get('/create', 'ProjectController@create')->name('projects.create');
     Route::get('/{project}/edit/{step?}', 'ProjectController@edit')->name('projects.edit');
     Route::put('/{project}/edit/{step?}', 'ProjectController@update')->name('projects.update');
+    Route::get('/{project}/awards/{step?}', 'ProjectController@awards')->name('projects.awards');
     Route::get('/{project}/{step?}', 'ProjectController@show')->name('projects.show');
     Route::delete('/{project}', 'ProjectController@destroy')->name('projects.destroy');
     Route::put('/{project}/step/{step}', 'ProjectController@stepUpdate')->name('projects.steps.update');
@@ -84,3 +85,5 @@ Route::group([
 Route::group(['prefix'=> 'project',], function(){
     Route::get('/{project}/step/{step}', 'ProjectController@stepShow')->name('projects.steps.show');
 });
+
+Route::resource('awards', 'AwardController');

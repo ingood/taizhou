@@ -67,4 +67,21 @@ $(document).ready(function(){
         event.preventDefault();
         $("#submit-form").submit();
     });
+
+    /**
+     * 页内添加 按钮
+     */
+    $(".create-button").click(function(){
+       $(".create-panel").toggle();
+    });
+
+    /**
+     * 页内添加 取消按钮
+     */
+    $(".create-cancel").click(function(){
+        $("#submit-form")[0].reset();
+        $(".create-error").remove();
+        $(".create-panel").removeClass('show');
+        $(".create-panel").hide();
+    })
 });

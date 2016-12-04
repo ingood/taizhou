@@ -29,6 +29,6 @@ class ProjectsRepository extends Repository
     public function createRich($data)
     {
         $data['user_id'] = \Auth::user()->id;
-        $this->model->create($data);
+        return $this->model->create($data);
     }
 }

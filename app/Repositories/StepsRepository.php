@@ -23,9 +23,8 @@ class StepsRepository extends Repository
 
     public function getNextRoute($projectId, $id)
     {
-        var_dump($projectId);
         $step = $this->model->where('id', '>', $id)->first();
-        return route('projects.steps.edit',['project' => $projectId, 'step' => $step->id]);
+        return route($step->route,['project' => $projectId, 'step' => $step->id]);
     }
 
     public function getRoute($step)

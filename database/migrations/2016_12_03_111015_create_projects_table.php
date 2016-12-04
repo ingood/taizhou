@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->comment('所属用户id');
             $table->string('xmmc')->unique()->comment('项目名称');
-            $table->string('xmmcyw')->unique()->comment('项目名称(英文)');
+            $table->string('xmmcyw')->nullable()->comment('项目名称(英文)');
             $table->string('ztc')->nullable()->comment('主题词');
             $table->string('cgdjhm')->nullable()->comment('成果登记号码');
             $table->string('tjjllb')->nullable()->comment('推荐奖励类别');

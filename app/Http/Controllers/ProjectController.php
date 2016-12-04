@@ -84,4 +84,10 @@ class ProjectController extends Controller
         $next = $this->step->getNextRoute($project->id, $stepId);
         return redirect($next);
     }
+
+    public function awards($id)
+    {
+        $project = $this->project->find($id);
+        return view('projects.awards')->with(compact('project'));
+    }
 }
