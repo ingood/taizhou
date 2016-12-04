@@ -28,4 +28,19 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function corporation()
+    {
+        return $this->belongsTo('App\Corporation');
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }

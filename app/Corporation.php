@@ -1,10 +1,15 @@
 <?php
-
 namespace App;
+use Baum\Node;
 
-use Illuminate\Database\Eloquent\Model;
+class Corporation extends Node {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'code', 'name'
+    ];
 
-class Corporation extends Model
-{
-    //
 }

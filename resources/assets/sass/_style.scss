@@ -1,0 +1,60 @@
+.main-content,  .sidebar {
+  background:#fff;
+  padding:10px 15px 30px;
+}
+.sidebar {
+  background:#d3e0e9;
+}
+.box-header, .box-footer {
+  overflow:hidden;
+  margin-bottom:10px;
+}
+
+.box-header .pull-right {
+  margin-top:22px;
+}
+
+.box-footer .footer-left {
+  line-height:30px;
+}
+.box-footer .footer-right .pagination {
+  margin:0;
+}
+.footer-center {
+  text-align:center;
+}
+.table-label {
+  vertical-align: middle !important;
+  text-align:right;
+  width:180px;
+  background:#f5f5f5;
+}
+.table-label.text-left {
+  text-align: left;
+}
+#delete-form {
+  display:none;
+}
+.input-col {
+  padding:0 !important;
+}
+.input-col-info {
+  line-height:36px !important;
+}
+.no-padding {
+  padding:0 !important;
+}
+.no-margin {
+  margin:0 !important;
+}
+.input-divider {
+  clear:both;
+  height:5px;
+}
+.create-panel {
+  display:none;
+}
+
+.create-panel .alert {
+  margin-bottom:0;
+}

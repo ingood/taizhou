@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCorporationsTable extends Migration
+class CreateOptionablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateCorporationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('corporations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('code')->unique()->nullable()->comment('单位代码');
-            $table->string('name')->unique()->comment('单位名称');
+        Schema::create('optionables', function (Blueprint $table) {
+            $table->integer('option_id')->unsigned();
+            $table->integer('optionable_id')->unsigned();
+            $table->string('optionable_type');
+
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateCorporationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('corporations');
+        Schema::dropIfExists('optionables');
     }
 }
